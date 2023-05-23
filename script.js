@@ -4,6 +4,7 @@ const companyFilter = document.querySelector('.company-filter');
 const all = document.querySelector('.all');
 const search = document.querySelector('.search');
 
+
 async function getData(){
     
     try{
@@ -80,7 +81,7 @@ async function getData(){
 
         search.addEventListener('keyup', () => {
                 // console.log(searchValue)
-               const searchProduct =  response.filter(product => product.title.includes(search.value)).map(product => {
+               const searchProduct =  response.filter(product => product.title.includes(search.value.toLowerCase())).map(product => {
                         return `<div class='product-card'>
                         <img class='product-image' src='${product.image}'/>
                         <p class='product-title'>${product.title}</p>
